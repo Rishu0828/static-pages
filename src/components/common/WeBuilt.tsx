@@ -1,12 +1,13 @@
-import React, { useRef, useState, MouseEvent } from "react";
+import React, { useRef, useState } from "react";
+import type { MouseEvent } from "react"; 
 import { Card, CardContent } from "@/components/ui/card";
 
-type BorderSide = "top" | "right" | "bottom" | "left" | null;
+type BorderSide = "top" | "right" | "bottom" | "left";
 
 const WeBuilt: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [blobPos, setBlobPos] = useState({ x: 0, y: 0 });
-  const [hoverSide, setHoverSide] = useState<BorderSide>(null);
+  const [hoverSide, setHoverSide] = useState<BorderSide | null>(null); // ✅ this fixes indexing issues
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     const rect = containerRef.current?.getBoundingClientRect();
@@ -23,6 +24,7 @@ const WeBuilt: React.FC = () => {
       left: x,
     };
 
+    // ✅ use non-null assertion safely with type narrowed
     const closestSide = (Object.keys(distances) as BorderSide[]).reduce((a, b) =>
       distances[a]! < distances[b]! ? a : b
     );
@@ -30,7 +32,7 @@ const WeBuilt: React.FC = () => {
     setHoverSide(closestSide);
   };
 
-  const getBorderClass = (side: BorderSide) => {
+  const getBorderClass = (side: BorderSide | null) => {
     switch (side) {
       case "top":
         return "border-t-2 border-purple-500";
@@ -51,9 +53,7 @@ const WeBuilt: React.FC = () => {
         ref={containerRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={() => setHoverSide(null)}
-        className={`relative group w-full p-10 min-h-60 rounded-lg transition-all duration-300 bg-transparent grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center overflow-hidden ${getBorderClass(
-          hoverSide
-        )}`}
+        className={`relative group w-full p-10 min-h-60 rounded-lg transition-all duration-300 bg-transparent grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center overflow-hidden ${getBorderClass(hoverSide)}`}
       >
         {/* Blob following cursor */}
         <div
@@ -84,7 +84,8 @@ const WeBuilt: React.FC = () => {
         ].map((item, index) => (
           <Card key={index} className="bg-transparent text-white text-sm shadow-none">
             <CardContent className="p-3">
-              {item.icon} <strong>{item.title}</strong>
+              <div className="text-xl">{item.icon}</div>
+              <strong>{item.title}</strong>
               <p className="mt-1">{item.desc}</p>
             </CardContent>
           </Card>
