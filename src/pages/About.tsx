@@ -25,22 +25,26 @@ const About: React.FC = () => {
         </p>
 
         {/* Hero Images */}
-        <div className="mt-12 w-full max-w-6xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {[Banner1, Banner2, Banner3].map((src, index) => (
-            <div
-              key={index}
-              className="relative group overflow-hidden rounded-xl w-full"
-            >
-              <div className="absolute inset-0 z-0 scale-0 group-hover:scale-125 transition-transform duration-500 ease-in-out bg-[#D09BFF] opacity-30 blur-2xl rounded-full pointer-events-none" />
-              <img
-                src={src}
-                alt={`Banner ${index + 1}`}
-                loading="lazy"
-                className="relative z-10 w-full h-auto object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-          ))}
-        </div>
+      <div className="mt-12 w-full max-w-6xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+  {[Banner1, Banner2, Banner3].map((src, index) => (
+    <div
+      key={index}
+      className="relative group overflow-hidden rounded-xl w-full flex justify-center"
+    >
+      {/* Purple Blob on Hover */}
+      <div className="absolute inset-0 z-0 scale-0 group-hover:scale-125 transition-transform duration-500 ease-in-out bg-[#D09BFF] opacity-30 blur-2xl rounded-full pointer-events-none" />
+
+      {/* Responsive Image */}
+      <img
+        src={src}
+        alt={`Banner ${index + 1}`}
+        loading="lazy"
+        className="relative z-10 w-[200px] sm:w-full h-auto object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
+  ))}
+</div>
+
       </section>
 
       {/* Our Journey */}
