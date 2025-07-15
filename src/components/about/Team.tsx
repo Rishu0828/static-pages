@@ -66,14 +66,14 @@ const Team: React.FC = () => {
   }, [hovered]);
 
   return (
-    <section className="w-full px-4 py-10 bg-[#121212] z-10">
+    <section className="w-full px-4 py-10 bg-transparent">
       <div
         ref={scrollRef}
-        className="overflow-x-auto whitespace-nowrap scrollbar-hide z-10"
+        className="overflow-x-auto whitespace-nowrap scrollbar-hide"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <div className="flex gap-4 z-10">
+        <div className="flex gap-4">
           {teamMembers.map((member, index) => (
             <div
               key={index}

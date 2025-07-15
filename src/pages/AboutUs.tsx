@@ -7,10 +7,12 @@ import { motion } from 'framer-motion';
 import Expertise from '@/components/about/Expertise';
 import Team from '@/components/about/Team';
 import Blob from '@/components/about/Blob';
+import { Link } from 'react-router-dom';
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="w-11/12 p-10 mx-auto">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-black dark:text-white py-4 relative ">
+
       {/* Main Section */}
       <section className="w-full text-center px-4 pt-12 pb-20">
         <Blob
@@ -31,19 +33,21 @@ const AboutUs: React.FC = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h1 className="text-4xl sm:text-[48px] font-normal leading-tight tracking-normal text-white font-inter z-1">
+          <h1 className="text-4xl sm:text-[48px] font-normal leading-tight tracking-normal font-inter z-1">
             Engineered by Developers, Built for{" "}
             <span className="text-[#8640FF]">Learning</span>
           </h1>
 
-          <p className="text-[16px] leading-relaxed text-white font-montserrat max-w-xl mx-auto z-10">
+          <p className="text-[16px] leading-relaxed  font-montserrat max-w-xl mx-auto z-10">
             DAL isn't just another online learning platform. It's the result of our journey as Full Stack and AI Developers to build a smarter LMS.
           </p>
 
           <div className="flex justify-center pt-4">
-            <Button className="w-[149px] h-[51px] px-5 py-[15px] rounded-[5px] bg-[#8640FF] text-white font-medium text-sm hover:bg-[#6e33d9] transition flex items-center justify-center gap-2 z-1">
+            <Button className="w-[149px] h-[51px] px-5 py-[15px] rounded-[5px] bg-[#8640FF]  font-medium text-sm hover:bg-[#6e33d9] transition flex items-center justify-center gap-2 z-1">
+              <Link to='/signup' className='flex flex-row gap-2 items-center'>
               Sign Up
               <FlaskConical className="w-4 h-4" />
+              </Link>
             </Button>
           </div>
         </motion.div>
@@ -97,8 +101,8 @@ const AboutUs: React.FC = () => {
         <div className="w-full px-4">
           <div className="flex flex-col md:flex-row md:justify-between gap-8">
             <div className="text-left w-full md:max-w-[50%] mt-10">
-              <p className="font-montserrat text-md text-white mb-2 z-2">Multilingual Magic</p>
-              <h2 className="font-kanit text-4xl text-white z-2">Our Journey</h2>
+              <p className="font-montserrat text-md  mb-2 z-2">Multilingual Magic</p>
+              <h2 className="font-kanit text-4xl  z-2">Our Journey</h2>
             </div>
 
             <div className="w-full md:max-w-[50%]">
@@ -130,7 +134,7 @@ const AboutUs: React.FC = () => {
               About Us
             </p>
 
-            <h2 className="font-kanit text-3xl sm:text-[40px] text-white mb-6 text-left">
+            <h2 className="font-kanit text-3xl sm:text-[40px]  mb-6 text-left">
               Features
             </h2>
 
@@ -157,7 +161,7 @@ const AboutUs: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-10 items-start max-w-7xl mx-auto">
           {/* Left Text Content */}
           <div className="flex flex-col max-w-xl min-w-80">
-            <h2 className="font-kanit text-4xl text-white mb-6">
+            <h2 className="font-kanit text-4xl  mb-6">
               Our <span className="text-[#8640FF]">Expertise</span>
             </h2>
             <p className="text-muted-foreground max-w-80">
@@ -203,7 +207,7 @@ const AboutUs: React.FC = () => {
         <div className="flex flex-col gap-10 w-full max-w-7xl mx-auto">
           {/* Heading & Paragraph */}
           <div className="flex flex-col max-w-xl w-full">
-            <h2 className="font-kanit text-4xl text-white mb-6">
+            <h2 className="font-kanit text-4xl  mb-6">
               Vision for the <span className="text-[#8640FF]">Future</span>
             </h2>
             <p className="text-muted-foreground">
@@ -222,7 +226,7 @@ const AboutUs: React.FC = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Button className="bg-[#8640FF] text-white hover:bg-[#6e33d9]">
+            <Button className="bg-[#8640FF] hover:bg-[#6e33d9]">
               Join our journey
             </Button>
             <Button className="flex items-center gap-2">
@@ -246,14 +250,14 @@ const AboutUs: React.FC = () => {
 
             {/* Right Text */}
             <div className="w-full lg:w-1/2 max-w-100">
-              <p className="text-[16px] leading-[30px] font-poppins font-normal text-white/65 mb-2">
+              <p className="text-[16px] leading-[30px] font-poppins font-normal  mb-2">
                 July 15, 2025
               </p>
-              <h3 className="font-kanit text-2xl text-white">
+              <h3 className="font-kanit text-2xl">
                 <span className="text-[#8640FF]">Beyond Automation:</span> DAL's Blueprint for Agentic Transformation
               </h3>
 
-              <div className="max-w-md text-white/70 font-poppins text-[16px] leading-[30px] space-y-4 mt-2">
+              <div className="max-w-md  font-poppins text-[16px] leading-[30px] space-y-4 mt-2">
                 <p>
                   Redefining productivity through Agentic AI. DAL builds modular AI agents that automate
                   tasks, boost efficiency, and power scalable solutions for work and learning.
@@ -261,7 +265,7 @@ const AboutUs: React.FC = () => {
 
                 <Button
                   variant="link"
-                  className="p-0 h-auto text-sm text-white/70 hover:text-white hover:underline"
+                  className="p-0 h-auto text-sm  hover:underline"
                 >
                   Learn more
                 </Button>
@@ -275,13 +279,13 @@ const AboutUs: React.FC = () => {
     overflow-visible 
   "
               >
-                <p className="text-white/70 border border-white/60 px-4 py-1 text-center rounded-xl hover:bg-white/10 transition">
+                <p className=" border border-black/60 hover:border-white/60 px-4 py-1 text-center rounded-xl hover:bg-white/10 transition">
                   Smart
                 </p>
-                <p className="text-white/70 border border-white/60 px-4 py-1 text-center rounded-xl hover:bg-white/10 transition">
+                <p className=" border border-black/60 hover:border-white/60 px-4 py-1 text-center rounded-xl hover:bg-white/10 transition">
                   Contract
                 </p>
-                <p className="text-white/70 border border-white/60 px-4 py-1 text-center rounded-xl hover:bg-white/10 transition">
+                <p className=" border border-black/60 hover:border-white/60 px-4 py-1 text-center rounded-xl hover:bg-white/10 transition">
                   Creation
                 </p>
               </div>
@@ -313,13 +317,13 @@ const AboutUs: React.FC = () => {
         <div className="flex flex-col w-full z-10">
           {/* Heading Content with Motion */}
           <motion.div
-            className="max-w-2xl px-4 py-8"
+            className="max-w-2xl px-4 py-8 text-left"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h1 className="text-3xl md:text-4xl font-kanit text-white mb-4">
+            <h1 className="text-3xl md:text-4xl font-kanit mb-4">
               Meet Our <span className="text-[#842DFF]">Team</span>
             </h1>
             <p className="text-base md:text-lg text-white/70 leading-relaxed">

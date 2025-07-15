@@ -6,9 +6,9 @@ import { Button } from '@/components/ui/button';
 
 const Contact: React.FC = () => {
   return (
-    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-transparent text-white z-50">
+    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-transparent text-white z-50 text-black dark:text-white">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        
+
         {/* Left Section: Info + Image */}
         <div className="flex flex-col gap-6">
           <div>
@@ -25,45 +25,45 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Right Section: Form */}
-      <div className="w-full max-w-md">
-  <div>
-    <h1 className="text-xl font-bold italic mb-4">Send us a message</h1>
-  </div>
+        <div className="w-full max-w-md">
+          <div>
+            <h1 className="text-xl font-bold italic mb-4">Send us a message</h1>
+          </div>
 
-  <form className="flex flex-col gap-6">
-    {/* Name */}
-    <Input
-      placeholder="Name"
-      className="border-0 border-b border-white bg-transparent rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 text-white placeholder:text-gray-300"
-    />
+          <form className="flex flex-col gap-6">
+            {/* Name */}
+            <Input
+              placeholder="Name"
+              className="border-0 border-b border-white bg-transparent rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-gray-300"
+            />
 
-    {/* Email */}
-    <Input
-      type="email"
-      placeholder="Email"
-      className="border-0 border-b border-white bg-transparent rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 text-white placeholder:text-gray-300"
-    />
+            {/* Email */}
+            <Input
+              type="email"
+              placeholder="Email"
+              className="border-0 border-b border-white bg-transparent rounded-none focus-visible:ring-0 focus-visible:ring-offset-0  placeholder:text-gray-300"
+            />
 
-    {/* Phone */}
-    <Input
-      type="tel"
-      placeholder="Phone"
-      className="border-0 border-b border-white bg-transparent rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 text-white placeholder:text-gray-300"
-    />
+            {/* Phone */}
+            <Input
+              type="tel"
+              placeholder="Phone"
+              className="border-0 border-b border-white bg-transparent rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-gray-300"
+            />
 
-    {/* Message */}
-    <Textarea
-      placeholder="Your Message"
-      rows={4}
-      className="border border-white bg-transparent rounded-md focus-visible:ring-0 focus-visible:ring-offset-0 text-white placeholder:text-gray-300 resize-none"
-    />
+            {/* Message */}
+            <Textarea
+              placeholder="Your Message"
+              rows={4}
+              className="border border-white bg-transparent rounded-md focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-gray-300 resize-none"
+            />
 
-    {/* Submit Button */}
-    <Button type="submit" className="w-full mt-4">
-      Submit
-    </Button>
-  </form>
-</div>
+            {/* Submit Button */}
+            <Button type="submit" className="w-full mt-4">
+              Submit
+            </Button>
+          </form>
+        </div>
 
       </div>
     </div>
